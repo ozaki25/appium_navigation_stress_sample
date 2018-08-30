@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
 
 const TopPage = ({ navigation }) => (
   <TouchableOpacity
+    accessibilityLabel="page"
     style={styles.container}
     onPress={() => {
       count += 1;
