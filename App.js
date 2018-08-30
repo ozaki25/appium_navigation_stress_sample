@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
+let count = 1;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -15,10 +17,11 @@ const TopPage = ({ navigation }) => (
   <TouchableOpacity
     style={styles.container}
     onPress={() => {
+      count += 1;
       navigation.navigate('TopPage');
     }}
   >
-    <Text style={styles.welcome}>Welcome to React Native!</Text>
+    <Text>{count}</Text>
   </TouchableOpacity>
 );
 
