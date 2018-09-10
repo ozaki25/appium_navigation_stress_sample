@@ -23,7 +23,7 @@ const navigate = () => {
   });
 };
 
-beforeEach(async () => {
+beforeAll(async () => {
   await driver.init(config);
   await driver.sleep(5000);
 });
