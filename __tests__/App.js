@@ -6,7 +6,7 @@ const PORT = 4723;
 const config = {
   platformName: 'Android',
   deviceName: 'Android Emulator',
-  app: './android/app/build/outputs/apk/app-debug.apk',
+  app: process.env.APK_PATH || './android/app/build/outputs/apk/app-debug.apk',
   unicodeKeyboard: true,
   resetKeyboard: true,
 };
@@ -23,11 +23,11 @@ const navigate = () => {
   });
 };
 
-beforeAll(async () => {
+beforeEach(async () => {
   await driver.init(config);
   await driver.sleep(5000);
 });
 
 describe('e2e', () => {
-  [...Array(100)].forEach(() => navigate());
+  [...Array(3)].forEach(() => navigate());
 });
