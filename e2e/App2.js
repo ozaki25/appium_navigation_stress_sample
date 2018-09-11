@@ -15,9 +15,9 @@ const driver = wd.promiseChainRemote('localhost', PORT);
 let count = 1;
 
 const navigate = () => {
-  it('navigate', async () => {
+  it('navigate2', async () => {
     console.log(count);
-    expect(await driver.hasElementByAccessibilityId('page')).toBe(true);
+    // expect(await driver.hasElementByAccessibilityId('page')).toBe(true);
     await driver.elementByAccessibilityId('page').click();
     count += 1;
   });
@@ -28,6 +28,6 @@ beforeAll(async () => {
   await driver.sleep(5000);
 });
 
-describe('e2e', () => {
+describe('e2e2', () => {
   [...Array(3)].forEach(() => navigate());
 });
